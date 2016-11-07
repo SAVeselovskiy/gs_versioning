@@ -4,35 +4,63 @@ module Fastlane
       attr_accessor :minor, :patch, :major, :build
 
       def initialize(major, minor, patch, build)
-      # assign instance avriables
+        # assign instance avriables
         @major, @minor, @patch, @build = major,minor,patch,build
       end
       def self.parse(parsed)
+        #TODO: впилить проверку на правильный формат
+        {"beta" => self.parse_beta(parsed), "rc" => self.parse_rc(parsed),"release" => self.parse_release(parsed)}
+      end
+      def self.parse_beta(parsed)
         beta_version = parsed["beta"]["version"]
-        v_elements = beta_version.split(pattern='.')
+        self.parse_string(beta_version)
+      end
+      def self.parse_rc(parsed)
+        rc_version = parsed["rc"]["version"]
+        self.parse_string(rc_version)
+      end
+      def self.parse_release(parsed)
+        release_version = parsed["release"]["version"]
+        self.parse_string(release_version)
+      end
+      def self.parse_string(str)
+        v_elements = str.split(pattern='.')
         patch_build_values = [v_elements[2].split(pattern='(')[0],  v_elements[2].split(pattern='(')[1].split(pattern=')')[0]]
         Version.new(v_elements[0].to_i,v_elements[1].to_i,patch_build_values[0].to_i,patch_build_values[1].to_i)
       end
+
       def toString
         res = @major.to_s + '.' + @minor.to_s + '.' + @patch.to_s + '(' + @build.to_s + ')'
       end
-   end
+    end
+    class FileHelper
+      def self.read(path)
+        file = File.open(path, "r+")
+        res = file.read
+        file.close
+        res
+      end
+      def self.write(path, str)
+        file = File.open(path, "w+")
+        file.write(str)
+        file.close
+      end
+    end
     class GsIncrementBetaVersionAction < Action
       def self.run(params)
-        file = File.open(params[:path], "r+")
-        json = file.read
-        file.close
+        require 'rubygems'
+        require 'json'
+        require 'fastlane/plugin/versioning'
+        jsonstr = FileHelper.read(params[:path]) #TODO: впилить проверку если не указан путь
+        json = JSON.parse(jsonstr)
         UI.message(json)
-        parsed = JSON.parse(json)
-        v = Version.parse(parsed)
-        v.build += 1
-
-        res = v.toString
+        v = Version.parse(json)
+        v["beta"].build += 1
+        UI.message(OtherAction.get_build_number_from_plist)
+        res = v["beta"].toString
         UI.message("New beta version " + res)
-        parsed["beta"]["version"] = res
-        file = File.open(params[:path], "w+")
-        file.write(parsed.to_json)
-        file.close
+        json["beta"]["version"] = res
+        FileHelper.write(params[:path],json.to_json)
         UI.message("The gs_versioning plugin is working!")
       end
 
