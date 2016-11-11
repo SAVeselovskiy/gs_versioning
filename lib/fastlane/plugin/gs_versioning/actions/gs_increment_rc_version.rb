@@ -1,14 +1,18 @@
 module Fastlane
   module Actions
-    class GsIncrementBetaVersionAction < Action
+    class GsIncrementRCVersionAction < Action
       def self.run(params)
+        require 'json'
+        require 'fastlane/plugin/versioning/actions/get_version_number_from_plist'
         jsonstr = FileHelper.read(params[:path]) #TODO: впилить проверку если не указан путь
         UI.message(json)
         json = JSON.parse(jsonstr)
         v = Version.parse(json)
-        v.build += 1
+        v["rc"].build += 1
 
         res = v.toString
+        build = GetVersionNumberFromPlistAction.run(xcodeproj:ENV["xcodeproj"], target:ENV["target"])
+        UI.message(build)
         UI.message("New relese_candidate version " + res)
         json["rc"]["version"] = res
         FileHelper.write(params[:path],json.to_json)
@@ -22,7 +26,6 @@ module Fastlane
       def self.authors
         ["SAVeselovskiy"]
       end
-
       def self.return_value
         # If your method provides a return value, you can describe here what it does
       end
