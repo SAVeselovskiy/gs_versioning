@@ -1,11 +1,11 @@
 module Fastlane
   module Actions
     class Version
-      attr_accessor :minor, :patch, :major, :build
+      attr_accessor :minor, :major, :build
 
-      def initialize(major, minor, patch, build)
+      def initialize(major, minor, build)
         # assign instance avriables
-        @major, @minor, @patch, @build = major,minor,patch,build
+        @major, @minor, @build = major,minor,build
       end
       def self.parse(parsed)
         #TODO: впилить проверку на правильный формат
@@ -25,12 +25,23 @@ module Fastlane
       end
       def self.parse_string(str)
         v_elements = str.split(pattern='.')
-        patch_build_values = [v_elements[2].split(pattern='(')[0],  v_elements[2].split(pattern='(')[1].split(pattern=')')[0]]
-        Version.new(v_elements[0].to_i,v_elements[1].to_i,patch_build_values[0].to_i,patch_build_values[1].to_i)
+        build_value = v_elements[1].split(pattern='(')[1].split(pattern=')')[0]
+        Version.new(v_elements[0].to_i,v_elements[1].to_i,build_value.to_i)
       end
-
+      def <= (other)
+        if @major < other.major
+          return true
+        elsif @minor < other.minor
+          return true
+        elsif @build < other.build
+          return true
+        elsif @major == other.major && @minor == other.minor && @build == other.build
+          return true
+        end
+        false
+      end
       def toString
-        res = @major.to_s + '.' + @minor.to_s + '.' + @patch.to_s + '(' + @build.to_s + ')'
+        res = @major.to_s + '.' + @minor.to_s + '(' + @build.to_s + ')'
       end
     end
     class FileHelper
@@ -48,20 +59,15 @@ module Fastlane
     end
     class GsIncrementBetaVersionAction < Action
       def self.run(params)
-        require 'rubygems'
         require 'json'
-        require 'fastlane/plugin/versioning'
+        require 'fastlane/plugin/versioning/actions/get_version_number_from_plist'
         jsonstr = FileHelper.read(params[:path]) #TODO: впилить проверку если не указан путь
         json = JSON.parse(jsonstr)
         UI.message(json)
         v = Version.parse(json)
         v["beta"].build += 1
-        UI.message(OtherAction.get_build_number_from_plist)
-        res = v["beta"].toString
-        UI.message("New beta version " + res)
-        json["beta"]["version"] = res
-        FileHelper.write(params[:path],json.to_json)
-        UI.message("The gs_versioning plugin is working!")
+        UI.message("New beta version " + v["beta"].to_s)
+        v["beta"]
       end
 
       def self.description

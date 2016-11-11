@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = %q{veselovskiysergey94@gmail.com}
 
   spec.summary       = %q{Plugin for GradoService versioning system}
-  # spec.homepage      = "https://github.com/<GITHUB_USERNAME>/fastlane-plugin-gs_versioning"
+  spec.homepage      = "https://github.com/SAVeselovskiy/gs_versioning"
   spec.license       = "MIT"
 
   spec.files         = Dir["lib/**/*"] + %w(README.md LICENSE)
