@@ -31,9 +31,9 @@ module Fastlane
       def <= (other)
         if @major < other.major
           return true
-        elsif @minor < other.minor
+        elsif @major == other.major && @minor < other.minor
           return true
-        elsif @build < other.build
+        elsif @major == other.major && @minor == other.minor && @build < other.build
           return true
         elsif @major == other.major && @minor == other.minor && @build == other.build
           return true
