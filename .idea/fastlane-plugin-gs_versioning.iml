@@ -46,7 +46,7 @@
     <orderEntry type="library" scope="PROVIDED" name="faraday-cookie_jar (v0.0.6, ruby-2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="faraday_middleware (v0.10.0, ruby-2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fastimage (v1.6.8, ruby-2.0.0-p648) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="fastlane (v1.107.0, ruby-2.0.0-p648) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="fastlane (v1.110.0, ruby-2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fastlane-plugin-versioning (v0.2.4, ruby-2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fastlane_core (v0.53.0, ruby-2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="frameit (v3.0.0, ruby-2.0.0-p648) [gem]" level="application" />
@@ -74,7 +74,6 @@
     <orderEntry type="library" scope="PROVIDED" name="multi_json (v1.12.1, ruby-2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multi_xml (v0.5.5, ruby-2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="multipart-post (v2.0.0, ruby-2.0.0-p648) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="nanaimo (v0.2.2, ruby-2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="net-sftp (v2.1.2, ruby-2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="net-ssh (v3.2.0, ruby-2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="os (v0.9.6, ruby-2.0.0-p648) [gem]" level="application" />

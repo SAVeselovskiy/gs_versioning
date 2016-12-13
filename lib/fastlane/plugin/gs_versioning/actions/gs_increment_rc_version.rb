@@ -17,7 +17,7 @@ module Fastlane
           v["rc"].build = 0
         elsif major < v["rc"].major
           raise "Wrong major number specified in Info.plist. Version major number can't be less than current major number on app store (and versions.json file)"
-        elsif v["beta"].major < v["rc"].major || v["beta"].minor < v["rc"].minor
+        elsif v["release"].major < v["rc"].major || v["release"].minor < v["rc"].minor
           v["rc"].build += 1
         else
           v["rc"].minor +=1
