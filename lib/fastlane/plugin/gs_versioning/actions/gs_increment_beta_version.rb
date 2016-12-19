@@ -65,6 +65,11 @@ module Fastlane
         json = JSON.parse(jsonstr)
         UI.message(json)
         v = Version.parse(json)
+        if v["rc"].major > v["beta"].major || (v["rc"].minor > v["beta"].minor && v["rc"].major == v["beta"].major)
+          v["beta"].minor = v["rc"].minor
+          v["beta"].major = v["rc"].major
+          v["beta"].build = 0
+        end
         v["beta"].build += 1
         UI.message("New beta version " + v["beta"].to_s)
         v["beta"]

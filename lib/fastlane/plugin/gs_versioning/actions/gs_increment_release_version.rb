@@ -12,8 +12,6 @@ module Fastlane
         build = GetVersionNumberFromPlistAction.run(xcodeproj:ENV["xcodeproj"], target:ENV["target"])
         major = build.split('.')[0].to_i
 
-        UI.message(v["rc"].toString)
-        UI.message(v["release"].toString)
         if major < v["release"].major
           raise "Wrong major number specified in Info.plist. Version major number can't be less than current major number on app store (and versions.json file)"
         elsif v["rc"] <= v["release"]
