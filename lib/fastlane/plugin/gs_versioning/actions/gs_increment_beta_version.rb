@@ -63,8 +63,8 @@ module Fastlane
         require 'fastlane/plugin/versioning/actions/get_version_number_from_plist'
         jsonstr = FileHelper.read(params[:path]) #TODO: впилить проверку если не указан путь
         json = JSON.parse(jsonstr)
-        UI.message(json)
-        v = Version.parse(json)
+        UI.message(json[params[:project_name]])
+        v = Version.parse(json[params[:project_name]])
         if v["rc"].major > v["beta"].major || (v["rc"].minor > v["beta"].minor && v["rc"].major == v["beta"].major)
           v["beta"].minor = v["rc"].minor
           v["beta"].major = v["rc"].major
@@ -98,7 +98,12 @@ module Fastlane
                                   env_name: "GS_VERSIONS_FILE_PATH",
                                description: "path to versions file",
                                   optional: false,
-                                      type: String)
+                                      type: String),
+          FastlaneCore::ConfigItem.new(key: :project_name,
+                                       env_name: "PROJECT_NAME",
+                                       description: "project name for versions file access",
+                                       optional: false,
+                                       type: String)
         ]
       end
 

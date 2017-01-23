@@ -7,7 +7,7 @@ module Fastlane
         jsonstr = FileHelper.read(params[:path]) #TODO: впилить проверку если не указан путь
         UI.message(jsonstr)
         json = JSON.parse(jsonstr)
-        v = Version.parse(json)
+        v = Version.parse(json[params[:project_name]])
 
         build = GetVersionNumberFromPlistAction.run(xcodeproj:ENV["xcodeproj"], target:ENV["target"])
         major = build.split('.')[0].to_i
@@ -48,6 +48,11 @@ on TestFlight and test it first. After that you can send version to review."
             FastlaneCore::ConfigItem.new(key: :path,
                                          env_name: "GS_VERSIONS_FILE_PATH",
                                          description: "path to versions file",
+                                         optional: false,
+                                         type: String),
+            FastlaneCore::ConfigItem.new(key: :project_name,
+                                         env_name: "PROJECT_NAME",
+                                         description: "project name for versions file access",
                                          optional: false,
                                          type: String)
         ]
