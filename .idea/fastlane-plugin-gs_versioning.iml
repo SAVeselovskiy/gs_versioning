@@ -46,7 +46,7 @@
     <orderEntry type="library" scope="PROVIDED" name="faraday-cookie_jar (v0.0.6, ruby-2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="faraday_middleware (v0.10.0, ruby-2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fastimage (v1.6.8, ruby-2.0.0-p648) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="fastlane (v2.0.3, ruby-2.0.0-p648) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="fastlane (v2.7.0, ruby-2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fastlane-plugin-versioning (v0.2.5, ruby-2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fastlane_core (v0.53.0, ruby-2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="frameit (v3.0.0, ruby-2.0.0-p648) [gem]" level="application" />
@@ -86,7 +86,7 @@
     <orderEntry type="library" scope="PROVIDED" name="pry (v0.10.4, ruby-2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="public_suffix (v2.0.4, ruby-2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rainbow (v2.1.0, ruby-2.0.0-p648) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rake (v11.3.0, ruby-2.0.0-p648) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rake (v12.0.0, ruby-2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="representable (v2.3.0, ruby-2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="retriable (v2.1.0, ruby-2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rouge (v1.11.1, ruby-2.0.0-p648) [gem]" level="application" />
@@ -95,7 +95,7 @@
     <orderEntry type="library" scope="PROVIDED" name="rspec-expectations (v3.5.0, ruby-2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-mocks (v3.5.0, ruby-2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rspec-support (v3.5.0, ruby-2.0.0-p648) [gem]" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="rubocop (v0.45.0, ruby-2.0.0-p648) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="rubocop (v0.46.0, ruby-2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="ruby-progressbar (v1.8.1, ruby-2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="rubyzip (v1.1.7, ruby-2.0.0-p648) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="scan (v0.14.1, ruby-2.0.0-p648) [gem]" level="application" />
