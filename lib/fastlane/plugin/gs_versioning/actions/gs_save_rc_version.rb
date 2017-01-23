@@ -8,7 +8,7 @@ module Fastlane
         json = JSON.parse(jsonstr)
         res = params[:version].toString
         UI.message("New relese_candidate version " + res)
-        json["rc"]["version"] = res
+        json[params[:project_name]]["rc"]["version"] = res
         FileHelper.write(params[:path],json.to_json)
         UI.message("The gs_versioning plugin is working!")
       end
@@ -40,7 +40,12 @@ module Fastlane
                                          env_name: "GS_APP_VERSION",
                                          description: "App version",
                                          optional: false,
-                                         type: Version)
+                                         type: Version),
+            FastlaneCore::ConfigItem.new(key: :project_name,
+                                         env_name: "PROJECT_NAME",
+                                         description: "project name for versions file access",
+                                         optional: false,
+                                         type: String)
         ]
       end
 
