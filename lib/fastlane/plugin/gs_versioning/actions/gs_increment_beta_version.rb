@@ -12,15 +12,15 @@ module Fastlane
         {"beta" => self.parse_beta(parsed), "rc" => self.parse_rc(parsed),"release" => self.parse_release(parsed)}
       end
       def self.parse_beta(parsed)
-        beta_version = parsed["beta"]["version"]
+        beta_version = parsed["beta"]
         self.parse_string(beta_version)
       end
       def self.parse_rc(parsed)
-        rc_version = parsed["rc"]["version"]
+        rc_version = parsed["rc"]
         self.parse_string(rc_version)
       end
       def self.parse_release(parsed)
-        release_version = parsed["release"]["version"]
+        release_version = parsed["release"]
         self.parse_string(release_version)
       end
       def self.parse_string(str)

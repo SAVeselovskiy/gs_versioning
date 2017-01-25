@@ -8,7 +8,7 @@ module Fastlane
         json = JSON.parse(jsonstr)
         res = params[:version].toString
         UI.message("New relese_candidate version " + res)
-        json[params[:project_name]]["rc"]["version"] = res
+        json[params[:project_name]]["rc"] = res
         FileHelper.write(params[:path],json.to_json)
         UI.message("The gs_versioning plugin is working!")
       end
