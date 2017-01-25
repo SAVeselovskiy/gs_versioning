@@ -1,25 +1,13 @@
 module Fastlane
   module Actions
-    class GsIncrementReleaseVersionAction < Action
+    class GsGetBetaVersionAction < Action
       def self.run(params)
         require 'json'
-        require 'fastlane/plugin/versioning/actions/get_version_number_from_plist'
         jsonstr = FileHelper.read(params[:path]) #TODO: впилить проверку если не указан путь
         UI.message(jsonstr)
         json = JSON.parse(jsonstr)
         v = Version.parse(json[params[:project_name]])
-
-        if v["rc"] <= v["release"]
-          raise "Release candidate version lower than release version. You have to send release candidate version
-on TestFlight and test it first. After that you can send version to review."
-        else
-          v["release"] = v["rc"]
-        end
-
-
-        res = v["release"].toString
-        UI.message("New relese version " + res)
-        v["release"]
+        v["beta"]
       end
 
       def self.description

@@ -57,7 +57,7 @@ module Fastlane
         json[params[:project_name]]["beta"]["version"] = res
         FileHelper.write(params[:path],json.to_json)
         UI.message("The gs_versioning plugin is working!")
-        "res"
+        res
       end
 
       def self.description
