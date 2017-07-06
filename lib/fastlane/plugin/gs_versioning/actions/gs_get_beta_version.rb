@@ -7,9 +7,9 @@ module Fastlane
         UI.message(jsonstr)
         json = JSON.parse(jsonstr)
         v = Version.parse(json[params[:project_name]])
-        UI.message("beta: " + v["beta"].to_s)
-        UI.message("rc: " + v["rc"].to_s)
-        UI.message("release: " + v["release"].to_s)
+        UI.message(v["beta"].to_s)
+        UI.message(v["rc"].to_s)
+        UI.message(v["release"].to_s)
         v["beta"]
       end
 
