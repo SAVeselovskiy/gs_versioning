@@ -6,11 +6,7 @@ module Fastlane
         jsonstr = FileHelper.read(params[:path]) #TODO: впилить проверку если не указан путь
         UI.message(jsonstr)
         json = JSON.parse(jsonstr)
-        v = Version.parse(json[params[:project_name]])
-        UI.message(v["beta"].to_s)
-        UI.message(v["rc"].to_s)
-        UI.message(v["release"].to_s)
-        v["beta"]
+        Version.parse(json[params[:project_name]])["beta"]
       end
 
       def self.description

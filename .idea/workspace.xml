@@ -50,8 +50,8 @@
       <file leaf-file-name="gs_get_beta_version.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_versioning/actions/gs_get_beta_version.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+            <state relative-caret-position="120">
+              <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -101,7 +101,7 @@
         <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_versioning/version.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
-              <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+              <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -524,7 +524,7 @@
       <workItem from="1484747756701" duration="898000" />
       <workItem from="1484897653930" duration="3457000" />
       <workItem from="1487240897436" duration="106000" />
-      <workItem from="1499084353964" duration="3266000" />
+      <workItem from="1499084353964" duration="3558000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of https://github.com/SAVeselovskiy/gs_versioning&#10;&#10;# Conflicts:&#10;#&#9;LICENSE&#10;#&#9;README.md&#10;">
       <created>1478295448644</created>
@@ -537,7 +537,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51489000" />
+    <option name="totallyTimeSpent" value="51781000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -912,8 +912,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_versioning/actions/gs_get_beta_version.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        <state relative-caret-position="120">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -921,7 +921,7 @@
     <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_versioning/version.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+          <caret line="2" column="21" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
           <folding />
         </state>
       </provider>
