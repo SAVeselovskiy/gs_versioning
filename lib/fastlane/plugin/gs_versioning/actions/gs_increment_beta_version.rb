@@ -11,6 +11,9 @@ module Fastlane
         #TODO: впилить проверку на правильный формат
         {"beta" => self.parse_beta(parsed), "rc" => self.parse_rc(parsed),"release" => self.parse_release(parsed)}
       end
+      def to_s
+        self.major.to_s + "." + self.minor.to_s + "." + self.build.to_s
+      end
       def self.parse_beta(parsed)
         beta_version = parsed["beta"]
         self.parse_string(beta_version)
