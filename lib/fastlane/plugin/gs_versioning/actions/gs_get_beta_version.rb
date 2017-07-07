@@ -3,8 +3,8 @@ module Fastlane
     class GsGetBetaVersionAction < Action
       def self.run(params)
         require 'json'
-        jsonstr = FileHelper.read(params[:path]) #TODO: впилить проверку если не указан путь
-        UI.message(params[:path])
+        jsonstr = '{"РЕКОД-МТ Руководитель":{"beta":"1.11(2)","rc":"1.11(1)","release":"1.11(1)"},"Geo4ME iOS":{"beta":"2.13(2)","rc":"2.15(1)","release":"2.14(0)"},"ActiveMap Informer iOS":{"beta":"1.8(1)","rc":"1.9(1)","release":"1.8(1)"},"MyHome iOS":{"beta":"1.5(4)","rc":"1.6(0)","release":"1.5(1)"},"AutomapGS iOS":{"beta":"1.11(2)","rc":"1.11(1)","release":"1.11(1)"},"MapMobile iOS":{"beta":"3.20(4)","rc":"3.21(0)","release":"3.21(0)"},"REKOD-Registrator iOS":{"beta":"3.20(2)","rc":"3.21(0)","release":"3.21(0)"},"Release Notes Redactor iOS":{"beta":"1.6(10)","rc":"1.5(4)","release":"1.5(4)"}}' #FileHelper.read(params[:path]) #TODO: впилить проверку если не указан путь
+        # UI.message(params[:path])
         UI.message(jsonstr)
         json = JSON.parse(jsonstr)
         v = Version.parse(json[params[:project_name]])
