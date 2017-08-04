@@ -57,7 +57,7 @@ module Fastlane
                                          optional: false,
                                          type: Version),
             FastlaneCore::ConfigItem.new(key: :project_name,
-                                         env_name: "PROJECT_NAME",
+                                         env_name: "ALIAS",
                                          description: "project name for versions file access",
                                          optional: false,
                                          type: String)

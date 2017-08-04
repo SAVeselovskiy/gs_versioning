@@ -46,7 +46,7 @@ on TestFlight and test it first. After that you can send version to review."
                                          optional: false,
                                          type: String),
             FastlaneCore::ConfigItem.new(key: :project_name,
-                                         env_name: "PROJECT_NAME",
+                                         env_name: "ALIAS",
                                          description: "project name for versions file access",
                                          optional: false,
                                          type: String)
