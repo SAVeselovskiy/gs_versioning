@@ -3,8 +3,7 @@ module Fastlane
     class GsIncrementRcVersionAction < Action
       def self.run(params)
         require 'json'
-        require 'gs_get_rc_version'
-        v = Fastlane::Actions::GsGetRcVersionAction.run(params)
+        v = Actions::GsGetRcVersionAction.run(params)
         build = GetVersionNumberFromPlistAction.run(xcodeproj: ENV["xcodeproj"], target: ENV["target"])
         major = build.split('.')[0].to_i
         if major > v["rc"].major

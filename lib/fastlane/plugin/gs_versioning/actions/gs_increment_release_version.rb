@@ -3,8 +3,7 @@ module Fastlane
     class GsIncrementReleaseVersionAction < Action
       def self.run(params)
         require 'json'
-        require 'gs_get_release_version'
-        v = Fastlane::Actions::GsGetReleaseVersionAction.run(params)
+        v = Actions::GsGetReleaseVersionAction.run(params)
         if v["rc"] <= v["release"]
           raise "Release candidate version lower than release version. You have to send release candidate version
 on TestFlight and test it first. After that you can send version to review."

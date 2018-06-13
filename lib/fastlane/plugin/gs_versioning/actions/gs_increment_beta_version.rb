@@ -17,8 +17,7 @@ module Fastlane
     class GsIncrementBetaVersionAction < Action
       def self.run(params)
         require 'json'
-        require 'gs_get_beta_version'
-        v = Fastlane::Actions::GsGetBetaVersionAction.run(params)
+        v = Actions::GsGetBetaVersionAction.run(params)
         if v["rc"].major > v["beta"].major || (v["rc"].minor > v["beta"].minor && v["rc"].major == v["beta"].major)
           v["beta"].minor = v["rc"].minor
           v["beta"].major = v["rc"].major
