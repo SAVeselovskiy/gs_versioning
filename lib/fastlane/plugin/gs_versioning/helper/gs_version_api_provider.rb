@@ -71,7 +71,7 @@ class GSVersionValue
   #build string - beta/rc/release
   #value Version object
   def updateValue(projectName, buildType, value)
-    @@versions_dict[projectName][buildType] = value
+    self.versions_dict[projectName][buildType] = value
   end
 
   def self.parseBackendResponse(body)
@@ -89,7 +89,7 @@ class GSVersionValue
   end
 
   def self.getVersion(project_name)
-    @@versions_dict[project_name]
+    self.versions_dict[project_name]
   end
 end
 
