@@ -60,7 +60,6 @@ class GSVersionValue
   @@versions_dict = {}
 
   def self.versions_dict
-    UI.message('Size of versions dict' + @@versions_dict.length.to_s)
     if @@versions_dict.length == 0
       GSVersionApiProvider.getVersions
     end
@@ -104,7 +103,6 @@ class GSVersionApiProvider
     end
 
     if response.success?
-      UI.message('Versions from server:\n'+body.to_s)
       GSVersionValue.parseBackendResponse(response.body)
     else
       raise(client.class.hostname + url + ' ' + response.status.to_s + ' ' + response.body['message'])
