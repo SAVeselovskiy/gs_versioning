@@ -74,6 +74,7 @@ class GSVersionValue
   end
 
   def self.parseBackendResponse(body)
+    puts(body.to_s)
     versions = {}
     body.each do |serverValue|
       project_alias = body['alias']
