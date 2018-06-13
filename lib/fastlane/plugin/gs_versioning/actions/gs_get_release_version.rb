@@ -3,7 +3,7 @@ module Fastlane
     class GsGetReleaseVersionAction < Action
       def self.run(params)
         require 'json'
-        v = GSVersionApiProvider.getVersion(params[:project_name])
+        v = GSVersionValue.getVersion(params[:project_name])
         if v.nil?
           jsonstr = FileHelper.read(params[:path]) # TODO: впилить проверку если не указан путь
           UI.error('USING LOCAL JSON FILE!!!')
