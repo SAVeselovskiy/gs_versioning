@@ -97,7 +97,7 @@ class GSVersionApiProvider
 
   def self.getVersions()
     url = 'versions'
-    response = client.request(:get) do |req|
+    response = @@client.request(:get) do |req|
       req.url url
       req.headers['Content-Type'] = 'application/json'
     end
@@ -105,7 +105,7 @@ class GSVersionApiProvider
     if response.success?
       GSVersionValue.parseBackendResponse(response.body)
     else
-      raise(client.class.hostname + url + ' ' + response.status.to_s + ' ' + response.body['message'])
+      raise(@@client.class.hostname + url + ' ' + response.status.to_s + ' ' + response.body['message'])
     end
   end
 
@@ -118,7 +118,7 @@ class GSVersionApiProvider
         'rcVersionName' => newValue['rc'],
         'releaseVersionName' => newValue['release']
     }
-    response = client.request(:patch) do |req|
+    response = @@client.request(:patch) do |req|
       req.url url
       req.body = json_params
       req.headers['Content-Type'] = 'application/json'
@@ -127,7 +127,7 @@ class GSVersionApiProvider
     if response.success?
       return response
     else
-      raise(client.class.hostname + url + ' ' + response.status.to_s + ' ' + response.body['message'])
+      raise(@@client.class.hostname + url + ' ' + response.status.to_s + ' ' + response.body['message'])
     end
   end
 end
