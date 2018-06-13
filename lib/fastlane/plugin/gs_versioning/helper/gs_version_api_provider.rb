@@ -75,14 +75,14 @@ class GSVersionValue
 
   def self.parseBackendResponse(body)
     versions = {}
-    body.each_key do |key|
-      serverValue = body[key]
+    body.each do |serverValue|
+      project_alias = body['alias']
       localValue = Version.parse({
                                      'beta' => serverValue['betaVersionName'],
                                      'rc' => serverValue['rcVersionName'],
                                      'release' => serverValue['releaseVersionName']
                                  })
-      versions[key] = localValue
+      versions[project_alias] = localValue
     end
     @@versions_dict = versions
   end

@@ -50,8 +50,8 @@
       <file leaf-file-name="gs_version_api_provider.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_versioning/helper/gs_version_api_provider.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="996">
-              <caret line="126" column="24" lean-forward="true" selection-start-line="126" selection-start-column="24" selection-end-line="126" selection-end-column="24" />
+            <state relative-caret-position="433">
+              <caret line="92" column="3" lean-forward="true" selection-start-line="92" selection-start-column="3" selection-end-line="92" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -518,11 +518,18 @@
       <option name="project" value="LOCAL" />
       <updated>1528885076645</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="fix class variable calling">
+      <created>1528886701156</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1528886701156</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73447000" />
+    <option name="totallyTimeSpent" value="73873000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -606,7 +613,8 @@
     <MESSAGE value="add remote versions storage" />
     <MESSAGE value="fix syntax" />
     <MESSAGE value="fix method calls" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix method calls" />
+    <MESSAGE value="fix class variable calling" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix class variable calling" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -927,8 +935,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_versioning/helper/gs_version_api_provider.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="996">
-          <caret line="126" column="24" lean-forward="true" selection-start-line="126" selection-start-column="24" selection-end-line="126" selection-end-column="24" />
+        <state relative-caret-position="433">
+          <caret line="92" column="3" lean-forward="true" selection-start-line="92" selection-start-column="3" selection-end-line="92" selection-end-column="3" />
           <folding />
         </state>
       </provider>
