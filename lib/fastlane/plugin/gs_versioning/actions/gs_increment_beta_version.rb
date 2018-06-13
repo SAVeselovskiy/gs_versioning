@@ -1,52 +1,5 @@
 module Fastlane
   module Actions
-    class Version
-      attr_accessor :minor, :major, :build
-
-      def initialize(major, minor, build)
-        # assign instance avriables
-        @major, @minor, @build = major,minor,build
-      end
-      def self.parse(parsed)
-        #TODO: впилить проверку на правильный формат
-        {"beta" => self.parse_beta(parsed), "rc" => self.parse_rc(parsed),"release" => self.parse_release(parsed)}
-      end
-      def to_s
-        self.major.to_s + "." + self.minor.to_s + "." + self.build.to_s
-      end
-      def self.parse_beta(parsed)
-        beta_version = parsed["beta"]
-        self.parse_string(beta_version)
-      end
-      def self.parse_rc(parsed)
-        rc_version = parsed["rc"]
-        self.parse_string(rc_version)
-      end
-      def self.parse_release(parsed)
-        release_version = parsed["release"]
-        self.parse_string(release_version)
-      end
-      def self.parse_string(str)
-        v_elements = str.split(pattern='.')
-        build_value = v_elements[1].split(pattern='(')[1].split(pattern=')')[0]
-        Version.new(v_elements[0].to_i,v_elements[1].to_i,build_value.to_i)
-      end
-      def <= (other)
-        if @major < other.major
-          return true
-        elsif @major == other.major && @minor < other.minor
-          return true
-        elsif @major == other.major && @minor == other.minor && @build < other.build
-          return true
-        elsif @major == other.major && @minor == other.minor && @build == other.build
-          return true
-        end
-        false
-      end
-      def toString
-        res = @major.to_s + '.' + @minor.to_s + '(' + @build.to_s + ')'
-      end
-    end
     class FileHelper
       def self.read(path)
         file = File.open(path, "r+")
@@ -54,6 +7,7 @@ module Fastlane
         file.close
         res
       end
+
       def self.write(path, str)
         file = File.open(path, "w+")
         file.write(str)
@@ -63,11 +17,8 @@ module Fastlane
     class GsIncrementBetaVersionAction < Action
       def self.run(params)
         require 'json'
-        require 'fastlane/plugin/versioning/actions/get_version_number_from_plist'
-        jsonstr = FileHelper.read(params[:path]) #TODO: впилить проверку если не указан путь
-        json = JSON.parse(jsonstr)
-        UI.message(json[params[:project_name]])
-        v = Version.parse(json[params[:project_name]])
+        require 'gs_get_beta_version'
+        v = Fastlane::Actions::GsGetBetaVersionAction.run(params)
         if v["rc"].major > v["beta"].major || (v["rc"].minor > v["beta"].minor && v["rc"].major == v["beta"].major)
           v["beta"].minor = v["rc"].minor
           v["beta"].major = v["rc"].major
@@ -98,10 +49,10 @@ module Fastlane
       def self.available_options
         [
           FastlaneCore::ConfigItem.new(key: :path,
-                                  env_name: "GS_VERSIONS_FILE_PATH",
-                               description: "path to versions file",
-                                  optional: false,
-                                      type: String),
+                                       env_name: "GS_VERSIONS_FILE_PATH",
+                                       description: "path to versions file",
+                                       optional: false,
+                                       type: String),
           FastlaneCore::ConfigItem.new(key: :project_name,
                                        env_name: "ALIAS",
                                        description: "project name for versions file access",

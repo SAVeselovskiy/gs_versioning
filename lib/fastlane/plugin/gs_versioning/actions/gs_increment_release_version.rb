@@ -3,19 +3,14 @@ module Fastlane
     class GsIncrementReleaseVersionAction < Action
       def self.run(params)
         require 'json'
-        require 'fastlane/plugin/versioning/actions/get_version_number_from_plist'
-        jsonstr = FileHelper.read(params[:path]) #TODO: впилить проверку если не указан путь
-        UI.message(jsonstr)
-        json = JSON.parse(jsonstr)
-        v = Version.parse(json[params[:project_name]])
-
+        require 'gs_get_release_version'
+        v = Fastlane::Actions::GsGetReleaseVersionAction.run(params)
         if v["rc"] <= v["release"]
           raise "Release candidate version lower than release version. You have to send release candidate version
 on TestFlight and test it first. After that you can send version to review."
         else
           v["release"] = v["rc"]
         end
-
 
         res = v["release"].toString
         UI.message("New relese version " + res)
@@ -29,6 +24,7 @@ on TestFlight and test it first. After that you can send version to review."
       def self.authors
         ["SAVeselovskiy"]
       end
+
       def self.return_value
         # If your method provides a return value, you can describe here what it does
       end
@@ -40,16 +36,16 @@ on TestFlight and test it first. After that you can send version to review."
 
       def self.available_options
         [
-            FastlaneCore::ConfigItem.new(key: :path,
-                                         env_name: "GS_VERSIONS_FILE_PATH",
-                                         description: "path to versions file",
-                                         optional: false,
-                                         type: String),
-            FastlaneCore::ConfigItem.new(key: :project_name,
-                                         env_name: "ALIAS",
-                                         description: "project name for versions file access",
-                                         optional: false,
-                                         type: String)
+          FastlaneCore::ConfigItem.new(key: :path,
+                                       env_name: "GS_VERSIONS_FILE_PATH",
+                                       description: "path to versions file",
+                                       optional: false,
+                                       type: String),
+          FastlaneCore::ConfigItem.new(key: :project_name,
+                                       env_name: "ALIAS",
+                                       description: "project name for versions file access",
+                                       optional: false,
+                                       type: String)
         ]
       end
 

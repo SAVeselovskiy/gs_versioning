@@ -3,43 +3,46 @@ module Fastlane
     class GsGetBetaVersionAction < Action
       def self.run(params)
         require 'json'
-        jsonstr = FileHelper.read(params[:path]) #TODO: впилить проверку если не указан путь
-        # UI.message(params[:path])
-        UI.message(jsonstr)
-        json = JSON.parse(jsonstr)
-        v = Version.parse(json[params[:project_name]])
+        v = GSVersionApiProvider.getVersion(params[:project_name])
+        if v.nil?
+          jsonstr = FileHelper.read(params[:path]) # TODO: впилить проверку если не указан путь
+          UI.error('USING LOCAL JSON FILE!!!')
+          UI.message(jsonstr)
+          json = JSON.parse(jsonstr)
+          v = Version.parse(json[params[:project_name]])
+        end
         v["beta"]
       end
 
-
       def self.description
-        "Plugin for GradoService versioning system"
+        'Plugin for GradoService versioning system'
       end
 
       def self.authors
-        ["SAVeselovskiy"]
+        ['SAVeselovskiy']
       end
+
       def self.return_value
         # If your method provides a return value, you can describe here what it does
       end
 
       def self.details
         # Optional:
-        "Plugin for GradoService versioning system"
+        'Plugin for GradoService versioning system'
       end
 
       def self.available_options
         [
-            FastlaneCore::ConfigItem.new(key: :path,
-                                         env_name: "GS_VERSIONS_FILE_PATH",
-                                         description: "path to versions file",
-                                         optional: false,
-                                         type: String),
-            FastlaneCore::ConfigItem.new(key: :project_name,
-                                         env_name: "ALIAS",
-                                         description: "project name for versions file access",
-                                         optional: false,
-                                         type: String)
+          FastlaneCore::ConfigItem.new(key: :path,
+                                       env_name: "GS_VERSIONS_FILE_PATH",
+                                       description: "path to versions file",
+                                       optional: false,
+                                       type: String),
+          FastlaneCore::ConfigItem.new(key: :project_name,
+                                       env_name: "ALIAS",
+                                       description: "project name for versions file access",
+                                       optional: false,
+                                       type: String)
         ]
       end
 

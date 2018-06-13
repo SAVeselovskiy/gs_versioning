@@ -3,10 +3,14 @@ module Fastlane
     class GsGetRcVersionAction < Action
       def self.run(params)
         require 'json'
-        jsonstr = FileHelper.read(params[:path]) #TODO: впилить проверку если не указан путь
-        UI.message(jsonstr)
-        json = JSON.parse(jsonstr)
-        v = Version.parse(json[params[:project_name]])
+        v = GSVersionApiProvider.getVersion(params[:project_name])
+        if v.nil?
+          jsonstr = FileHelper.read(params[:path]) # TODO: впилить проверку если не указан путь
+          UI.error('USING LOCAL JSON FILE!!!')
+          UI.message(jsonstr)
+          json = JSON.parse(jsonstr)
+          v = Version.parse(json[params[:project_name]])
+        end
         v["rc"]
       end
 
@@ -17,6 +21,7 @@ module Fastlane
       def self.authors
         ["SAVeselovskiy"]
       end
+
       def self.return_value
         # If your method provides a return value, you can describe here what it does
       end
@@ -28,16 +33,16 @@ module Fastlane
 
       def self.available_options
         [
-            FastlaneCore::ConfigItem.new(key: :path,
-                                         env_name: "GS_VERSIONS_FILE_PATH",
-                                         description: "path to versions file",
-                                         optional: false,
-                                         type: String),
-            FastlaneCore::ConfigItem.new(key: :project_name,
-                                         env_name: "ALIAS",
-                                         description: "project name for versions file access",
-                                         optional: false,
-                                         type: String)
+          FastlaneCore::ConfigItem.new(key: :path,
+                                       env_name: "GS_VERSIONS_FILE_PATH",
+                                       description: "path to versions file",
+                                       optional: false,
+                                       type: String),
+          FastlaneCore::ConfigItem.new(key: :project_name,
+                                       env_name: "ALIAS",
+                                       description: "project name for versions file access",
+                                       optional: false,
+                                       type: String)
         ]
       end
 
