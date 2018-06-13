@@ -77,7 +77,7 @@ class GSVersionValue
     puts(body.to_s)
     versions = {}
     body.each do |serverValue|
-      project_alias = body['alias']
+      project_alias = serverValue['alias']
       localValue = Version.parse({
                                      'beta' => serverValue['betaVersionName'],
                                      'rc' => serverValue['rcVersionName'],
