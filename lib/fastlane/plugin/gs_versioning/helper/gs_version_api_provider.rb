@@ -97,7 +97,7 @@ class GSVersionApiProvider
   @@client = Spaceship::GSBotClient.new
 
   def self.getVersions()
-    url = 'versions'
+    url = 'versions?platform=ios'
     response = @@client.request(:get) do |req|
       req.url url
       req.headers['Content-Type'] = 'application/json'
