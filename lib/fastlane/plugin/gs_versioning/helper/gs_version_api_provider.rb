@@ -113,6 +113,7 @@ class GSVersionApiProvider
   end
 
   def self.updateVersions(projectName, newValue = GSVersionValue.versions_dict[projectName])
+    require 'json'
     GSVersionValue.versions_dict[projectName] = newValue
     url = 'versions'
     json_params = {
@@ -123,7 +124,7 @@ class GSVersionApiProvider
     }
     response = @@client.request(:patch) do |req|
       req.url url
-      req.body = json_params.to_s
+      req.body = json_params.to_json
       req.headers['Content-Type'] = 'application/json'
     end
 
