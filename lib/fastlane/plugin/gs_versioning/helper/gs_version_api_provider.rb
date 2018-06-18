@@ -63,6 +63,7 @@ class GSVersionValue
   def self.versions_dict
     if @@versions_dict.length == 0
       GSVersionApiProvider.getVersions
+      puts('Did update versions static variable')
     end
     @@versions_dict
   end

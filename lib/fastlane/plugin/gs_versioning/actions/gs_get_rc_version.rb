@@ -3,6 +3,7 @@ module Fastlane
     class GsGetRcVersionAction < Action
       def self.run(params)
         require 'json'
+        UI.message('GsGetRcVersionAction')
         v = GSVersionValue.getVersion(params[:project_name])
         if v.nil?
           jsonstr = FileHelper.read(params[:path]) # TODO: впилить проверку если не указан путь
