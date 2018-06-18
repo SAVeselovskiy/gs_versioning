@@ -25,7 +25,7 @@ module Fastlane
           v_beta.build = 0
         end
         v_beta.build += 1
-        UI.message("New beta version " + v["beta"].to_s)
+        UI.message("New beta version " + v_beta.to_s)
         v_beta
       end
 
