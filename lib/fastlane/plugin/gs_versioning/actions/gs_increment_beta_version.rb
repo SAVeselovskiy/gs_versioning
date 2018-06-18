@@ -17,15 +17,16 @@ module Fastlane
     class GsIncrementBetaVersionAction < Action
       def self.run(params)
         require 'json'
-        v = Actions::GsGetBetaVersionAction.run(params)
-        if v["rc"].major > v["beta"].major || (v["rc"].minor > v["beta"].minor && v["rc"].major == v["beta"].major)
-          v["beta"].minor = v["rc"].minor
-          v["beta"].major = v["rc"].major
-          v["beta"].build = 0
+        v_beta = Actions::GsGetBetaVersionAction.run(params)
+        v_rc = Actions::GsGetRcVersionAction.run(params)
+        if v_rc.major > v_beta.major || (v_rc.minor > v_beta.minor && v_rc.major == v_beta.major)
+          v_beta.minor = v_rc.minor
+          v_beta.major = v_rc.major
+          v_beta.build = 0
         end
-        v["beta"].build += 1
+        v_beta.build += 1
         UI.message("New beta version " + v["beta"].to_s)
-        v["beta"]
+        v_beta
       end
 
       def self.description

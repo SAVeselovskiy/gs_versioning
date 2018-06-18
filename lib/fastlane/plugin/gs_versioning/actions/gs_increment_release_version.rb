@@ -3,17 +3,18 @@ module Fastlane
     class GsIncrementReleaseVersionAction < Action
       def self.run(params)
         require 'json'
-        v = Actions::GsGetReleaseVersionAction.run(params)
-        if v["rc"] <= v["release"]
+        v_release = Actions::GsGetReleaseVersionAction.run(params)
+        v_rc = Actions::GsGetRcVersionAction.run(params)
+        if v_rc <= v_release
           raise "Release candidate version lower than release version. You have to send release candidate version
 on TestFlight and test it first. After that you can send version to review."
         else
-          v["release"] = v["rc"]
+          v_release = v_rc
         end
 
-        res = v["release"].toString
+        res = v_release.toString
         UI.message("New relese version " + res)
-        v["release"]
+        v_release
       end
 
       def self.description
