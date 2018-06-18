@@ -123,7 +123,7 @@ class GSVersionApiProvider
     }
     response = @@client.request(:patch) do |req|
       req.url url
-      req.body = json_params
+      req.body = json_params.to_s
       req.headers['Content-Type'] = 'application/json'
     end
 
