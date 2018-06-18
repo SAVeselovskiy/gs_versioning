@@ -31,6 +31,7 @@ class Version
   end
 
   def self.parse_string(str)
+    puts('Parsing version str ' + str)
     v_elements = str.split(pattern='.')
     build_value = v_elements[1].split(pattern='(')[1].split(pattern=')')[0]
     Version.new(v_elements[0].to_i, v_elements[1].to_i, build_value.to_i)
