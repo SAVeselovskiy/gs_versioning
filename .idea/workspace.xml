@@ -28,8 +28,8 @@
       <file leaf-file-name="gs_increment_beta_version.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_versioning/actions/gs_increment_beta_version.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="28" column="14" lean-forward="false" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
+            <state relative-caret-position="418">
+              <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -45,7 +45,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="version.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="version.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_versioning/version.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
@@ -61,20 +61,20 @@
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <marker date="1529313543831" expanded="true" signature="60015:60057" ph="..." />
-                <marker date="1529313543831" expanded="true" signature="60015:60075" ph="..." />
-                <marker date="1529313543831" expanded="true" signature="60015:60088" ph="..." />
-                <marker date="1529313543831" expanded="true" signature="60015:60103" ph="..." />
+                <marker date="1529313765435" expanded="true" signature="60432:60474" ph="..." />
+                <marker date="1529313765435" expanded="true" signature="60432:60492" ph="..." />
+                <marker date="1529313765435" expanded="true" signature="60432:60505" ph="..." />
+                <marker date="1529313765435" expanded="true" signature="60432:60520" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gs_get_beta_version.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="gs_get_beta_version.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_versioning/actions/gs_get_beta_version.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="8" lean-forward="false" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="44" />
+            <state relative-caret-position="60">
+              <caret line="4" column="8" lean-forward="false" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -163,15 +163,15 @@
         <option value="$PROJECT_DIR$/lib/fastlane/plugin/gs_versioning/actions/gs_save_release_version.rb" />
         <option value="$PROJECT_DIR$/lib/fastlane/plugin/gs_versioning/actions/gs_save_beta_version.rb" />
         <option value="$PROJECT_DIR$/lib/fastlane/plugin/gs_versioning/actions/gs_save_rc_version.rb" />
-        <option value="$PROJECT_DIR$/lib/fastlane/plugin/gs_versioning/actions/gs_increment_beta_version.rb" />
         <option value="$PROJECT_DIR$/lib/fastlane/plugin/gs_versioning/actions/gs_increment_rc_version.rb" />
         <option value="$PROJECT_DIR$/lib/fastlane/plugin/gs_versioning/actions/gs_increment_release_version.rb" />
         <option value="$PROJECT_DIR$/lib/fastlane/plugin/gs_versioning/helper/gs_version_api_provider.rb" />
         <option value="$PROJECT_DIR$/lib/fastlane/plugin/gs_versioning/actions/gs_get_beta_version.rb" />
         <option value="$PROJECT_DIR$/lib/fastlane/plugin/gs_versioning/actions/gs_get_rc_version.rb" />
         <option value="$PROJECT_DIR$/lib/fastlane/plugin/gs_versioning/actions/gs_get_release_version.rb" />
-        <option value="$PROJECT_DIR$/lib/fastlane/plugin/gs_versioning/version.rb" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
+        <option value="$PROJECT_DIR$/lib/fastlane/plugin/gs_versioning/actions/gs_increment_beta_version.rb" />
+        <option value="$PROJECT_DIR$/lib/fastlane/plugin/gs_versioning/version.rb" />
       </list>
     </option>
   </component>
@@ -586,11 +586,25 @@
       <option name="project" value="LOCAL" />
       <updated>1529312881426</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="fix">
+      <created>1529313563385</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1529313563385</updated>
+    </task>
+    <task id="LOCAL-00016" summary="fix">
+      <created>1529313768850</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1529313768850</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78491000" />
+    <option name="totallyTimeSpent" value="78672000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -929,22 +943,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_versioning/actions/gs_increment_rc_version.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="12" lean-forward="false" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_versioning/actions/gs_increment_release_version.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_versioning/helper/gs_versioning_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -977,10 +975,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1529313765435" expanded="true" signature="60432:60474" ph="..." />
+            <marker date="1529313765435" expanded="true" signature="60432:60492" ph="..." />
+            <marker date="1529313765435" expanded="true" signature="60432:60505" ph="..." />
+            <marker date="1529313765435" expanded="true" signature="60432:60520" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_versioning/actions/gs_get_beta_version.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="8" lean-forward="false" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_versioning/actions/gs_increment_beta_version.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="28" column="14" lean-forward="false" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
+        <state relative-caret-position="418">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_versioning/actions/gs_increment_rc_version.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="12" lean-forward="false" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_versioning/actions/gs_increment_release_version.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="28" lean-forward="false" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -989,27 +1024,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="21" lean-forward="false" selection-start-line="2" selection-start-column="21" selection-end-line="2" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1529313543831" expanded="true" signature="60015:60057" ph="..." />
-            <marker date="1529313543831" expanded="true" signature="60015:60075" ph="..." />
-            <marker date="1529313543831" expanded="true" signature="60015:60088" ph="..." />
-            <marker date="1529313543831" expanded="true" signature="60015:60103" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/fastlane/plugin/gs_versioning/actions/gs_get_beta_version.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="8" lean-forward="false" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="44" />
           <folding />
         </state>
       </provider>
