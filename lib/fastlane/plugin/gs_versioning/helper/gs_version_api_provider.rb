@@ -12,7 +12,7 @@ class Version
   end
 
   def to_s
-    self.major.to_s + "." + self.minor.to_s + "." + self.build.to_s
+    self.toString
   end
 
   def self.parse_beta(parsed)
